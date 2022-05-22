@@ -1,0 +1,35 @@
+# could concatenate a bunch of files seperating out entities 
+scalar Time
+
+type Chef {
+  id: ID!
+  firstName: String!
+  lastName:  String!
+  dob: Time!
+}
+
+type Meal {
+  id: ID!
+  name: String!
+  rating: Int!
+  ingredients: [Ingredient!]!
+  chef: Chef!
+}
+
+type Ingredient {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  chefs: [Chef!]!
+  chef(id: ID!): Chef!
+  meals: [Meal!]!
+  meal(id: ID!): Meal!
+  ingredients: [Ingredient!]!
+  ingredient(id: ID!): Ingredient!
+  # meals(chefId: ID!) 
+}
+
+type Mutation {
+}
